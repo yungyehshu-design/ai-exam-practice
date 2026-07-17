@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="iPAS AI 應用規劃師與資策會生成式 AI 能力認證原創模擬測驗">
 <title>AI 雙證照模擬測驗｜Roger Study Lab</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=0.3">
 </head>
 <body>
 <div class="shell">
   <header class="hero">
     <h1>AI 雙證照模擬測驗</h1>
     <p>iPAS AI 應用規劃師初級 × 資策會生成式 AI 能力認證</p>
-    <div class="notice">V0.2 試行版｜題目為依官方公開範圍編寫的原創練習題，非官方試題。目前題庫已做基本邏輯檢查，新增歷史錯題明細與紀錄匯出；題庫尚待 Claude 第二輪獨立稽核。</div>
+    <div class="notice">V0.3 題庫品質修正版｜60 題已完成 ChatGPT × Claude 交叉審查；正解位置已平衡、誘答選項已重寫，並預設打亂選項。</div>
   </header>
 
   <section id="setup" class="panel">
@@ -34,7 +34,7 @@
     </div>
     <div class="checkrow">
       <label><input type="checkbox" id="useTimer" checked> 依正式考試節奏計時</label>
-      <label><input type="checkbox" id="shuffleOptions"> 打亂選項順序</label>
+      <label><input type="checkbox" id="shuffleOptions" checked> 打亂選項順序</label>
     </div>
     <div class="btnbar">
       <button class="btn btn-primary" id="startBtn">開始測驗</button>
@@ -74,10 +74,10 @@
   <section id="history" class="panel hidden"></section>
 
   <footer class="footer">
-    題庫資料確認日：2026-07-17｜本工具只供學習，不代表 iPAS、工研院或資策會官方立場。
+    題庫版本：V0.3｜交叉審查日：2026-07-17｜本工具只供學習，不代表 iPAS、工研院或資策會官方立場。
   </footer>
 </div>
-<script src="questions.js"></script>
-<script src="app.js"></script>
+<script src="questions.js?v=0.3"></script>
+<script src="app.js?v=0.3"></script>
 </body>
 </html>

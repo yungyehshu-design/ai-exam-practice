@@ -1,0 +1,1142 @@
+[
+  {
+    "id": "IPAS-S1-001",
+    "exam": "ipas_s1",
+    "category": "L111 人工智慧概念與治理",
+    "difficulty": 1,
+    "question": "下列關於人工智慧、機器學習與深度學習的關係，何者最適當？",
+    "options": [
+      "深度學習通常是機器學習的子領域，而機器學習是實現人工智慧的方法之一",
+      "機器學習是深度學習的子領域，而人工智慧主要用於保存、查詢與呈現資料",
+      "深度學習涵蓋人工智慧與機器學習，三者差異只在使用的資料量",
+      "人工智慧、機器學習與深度學習彼此平行，沒有包含或從屬關係"
+    ],
+    "answer": 0,
+    "explanation": "常見層級關係為：人工智慧涵蓋機器學習，機器學習又涵蓋以多層神經網路為核心的深度學習。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-002",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 1,
+    "question": "公司根據房屋坪數、屋齡、地點與樓層預測成交價格，最接近哪一種任務？",
+    "options": [
+      "分類",
+      "迴歸",
+      "分群",
+      "關聯規則"
+    ],
+    "answer": 1,
+    "explanation": "成交價格是連續數值，因此屬於迴歸；分類則是預測離散類別。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-003",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 1,
+    "question": "企業沒有顧客類型標籤，希望依消費行為自動找出相似客群，最適合採用哪一種方法？",
+    "options": [
+      "迴歸",
+      "分類",
+      "分群",
+      "強化學習"
+    ],
+    "answer": 2,
+    "explanation": "沒有既有標籤，並希望依相似性形成群組，是非監督式學習中的分群。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-004",
+    "exam": "ipas_s1",
+    "category": "L112 資料處理與分析",
+    "difficulty": 2,
+    "question": "銀行要在客戶申請貸款當下預測未來是否違約。下列哪一項特徵最可能造成資料洩漏？",
+    "options": [
+      "申請當下的月收入與任職年資",
+      "申請當下計算的負債所得比",
+      "申請日前一年各期信用卡帳單的繳款紀錄",
+      "放款六個月後實際產生的逾期天數"
+    ],
+    "answer": 3,
+    "explanation": "模型在申請當下不可能取得放款六個月後的逾期資料。將未來才會出現的資訊放進特徵，會造成資料洩漏。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-005",
+    "exam": "ipas_s1",
+    "category": "L112 資料處理與分析",
+    "difficulty": 2,
+    "question": "關於 Z-score 標準化與 Min-Max 正規化，下列何者正確？",
+    "options": [
+      "Z-score 通常縮放到 0～1；Min-Max 通常使平均數為 0、標準差為 1 以上",
+      "Z-score 通常使平均數接近 0、標準差接近 1；Min-Max 通常縮放到指定範圍",
+      "兩種方法都會自動移除離群值，因此轉換後不必再檢查資料分布",
+      "兩種方法主要用於將類別欄位轉成代碼，與數值尺度差異無關"
+    ],
+    "answer": 1,
+    "explanation": "Z-score 是以平均數與標準差縮放；Min-Max 通常將數值縮放至 0～1 等指定範圍。兩者不會自動移除離群值。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-006",
+    "exam": "ipas_s1",
+    "category": "L112 資料處理與分析",
+    "difficulty": 2,
+    "question": "設備溫度欄位約有 4% 缺失值。下列哪一項做法最不適當？",
+    "options": [
+      "先檢查缺失值是否集中在特定設備或特定時段",
+      "依設備型號與運轉條件，評估分組後進行插補",
+      "未分析缺失原因，就把所有缺失溫度一律填為 0°C",
+      "比較中位數、模型插補與增加缺失指標等方法的影響，並記錄結果"
+    ],
+    "answer": 2,
+    "explanation": "0°C 可能具實際物理意義，任意填入會扭曲分布與模型判斷。缺失值處理需依成因、比例及業務情境評估。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-007",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 2,
+    "question": "某疾病篩檢模型 TP=72、FP=18、FN=8、TN=102。其 Recall 約為多少？",
+    "options": [
+      "72%",
+      "80%",
+      "96%",
+      "90%"
+    ],
+    "answer": 3,
+    "explanation": "Recall = TP ÷ (TP + FN) = 72 ÷ 80 = 90%。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-008",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 2,
+    "question": "詐欺交易僅占 1%，模型把所有交易都判為正常，Accuracy 仍有 99%。最適當的判斷是？",
+    "options": [
+      "Accuracy 可能誤導，還應檢查少數類別的 Recall、Precision、F1 或 PR-AUC",
+      "Accuracy 已達 99%，表示模型在少數類與多數類的 Precision、Recall 與錯誤成本都可接受",
+      "應增加更多正常交易樣本，讓多數類比例更貼近真實營運資料，之後只看 Accuracy",
+      "只要固定分類門檻為 0.5 並維持原始類別比例，就能消除評估偏差"
+    ],
+    "answer": 0,
+    "explanation": "高度不平衡資料中，全部預測為多數類也可能得到很高 Accuracy，卻完全抓不到少數類。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-009",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 3,
+    "question": "關於 SMOTE，下列何者最正確？",
+    "options": [
+      "從多數類別中複製樣本，藉此提高模型對正常案例的辨識能力",
+      "刪除少數類別中的邊界樣本，使兩個類別的樣本數量完全相同",
+      "在少數類別鄰近樣本之間產生合成樣本，且通常只套用於訓練資料",
+      "先對全部資料執行合成取樣，再切分訓練集與測試集以避免任何偏差"
+    ],
+    "answer": 2,
+    "explanation": "SMOTE 透過少數類別鄰近樣本合成新樣本。必須避免在切分資料前套用，否則可能造成資料洩漏。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "進階／歷屆延伸"
+  },
+  {
+    "id": "IPAS-S1-010",
+    "exam": "ipas_s1",
+    "category": "L112 資料處理與分析",
+    "difficulty": 2,
+    "question": "研究人員認為「星期幾」與「出發小時」共同作用時會形成特殊尖峰模式。最能表達此交互作用的是？",
+    "options": [
+      "缺失值插補",
+      "隨機抽樣",
+      "資料去識別化",
+      "特徵交叉"
+    ],
+    "answer": 3,
+    "explanation": "特徵交叉把兩個或多個特徵組合，以捕捉單一特徵無法表示的交互效果。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-011",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 3,
+    "question": "下列關於 L1 與 L2 正則化的說明，何者最適當？",
+    "options": [
+      "L1 可能使部分係數降為 0；L2 通常縮小係數，但未必降為 0",
+      "L1 是 Ridge 且只縮小係數；L2 是 Lasso 且會將全部係數降為 0",
+      "L1 與 L2 都會增加模型複雜度，因此主要用來提高訓練集準確率",
+      "L1 只適用於分類任務；L2 只適用於分群與其他非監督式學習"
+    ],
+    "answer": 0,
+    "explanation": "L1（Lasso）可產生稀疏模型；L2（Ridge）通常使係數平滑縮小。兩者常用於降低過度擬合。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "進階／歷屆延伸"
+  },
+  {
+    "id": "IPAS-S1-012",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 2,
+    "question": "模型訓練集準確率 99%，驗證集只有 68%。下列哪一項措施較合理？",
+    "options": [
+      "持續增加模型層數與特徵數，直到訓練集準確率達到 100%",
+      "評估正則化、特徵篩選、降低模型複雜度，並使用交叉驗證",
+      "把驗證集併入訓練集，再以原訓練集作為最終測試資料",
+      "只公布訓練集的高分，並忽略驗證集與新資料的表現差異"
+    ],
+    "answer": 1,
+    "explanation": "訓練表現高但驗證表現低，顯示過度擬合；應提高泛化能力，而非持續追求訓練集分數。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-013",
+    "exam": "ipas_s1",
+    "category": "L113 機器學習",
+    "difficulty": 2,
+    "question": "下列任務與常見深度學習架構搭配，何者最合理？",
+    "options": [
+      "影像瑕疵辨識—RNN/LSTM 模型；設備序列訊號—PCA；長篇文字理解—CNN",
+      "影像瑕疵辨識—K-means；設備序列訊號—決策樹；長篇文字理解—線性迴歸",
+      "影像瑕疵辨識—關聯規則；設備序列訊號—KNN；長篇文字理解—主成分分析",
+      "影像辨識—CNN；設備序列—RNN/LSTM；長篇文字—Transformer"
+    ],
+    "answer": 3,
+    "explanation": "CNN 擅長局部空間特徵；RNN/LSTM 常用於序列；Transformer 以注意力機制處理長距離關係。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-014",
+    "exam": "ipas_s1",
+    "category": "L112 資料處理與分析",
+    "difficulty": 2,
+    "question": "在模型開發流程中，驗證集的主要用途為何？",
+    "options": [
+      "用來調整超參數、比較候選模型，並協助選擇開發方案",
+      "用來訓練模型權重，並在每一輪更新時提供梯度資訊",
+      "保留到開發完成後，僅用一次來估計模型的最終泛化表現",
+      "用來保存尚未清洗的原始資料，避免與訓練資料混在一起"
+    ],
+    "answer": 0,
+    "explanation": "驗證集用於模型選擇與超參數調整；測試集則保留到最後進行較客觀的最終評估。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-015",
+    "exam": "ipas_s1",
+    "category": "L111 人工智慧概念與治理",
+    "difficulty": 2,
+    "question": "企業以 AI 自動篩選求職者，哪一項治理設計最適當？",
+    "options": [
+      "模型達到平均準確率門檻後，取消人工介入以維持一致性",
+      "建立分群績效與偏誤檢測、人工覆核、申訴及決策紀錄機制",
+      "公開所有求職者的原始個資與特徵權重，以提高制度透明度",
+      "只最佳化整體準確率，不再檢查不同群體的誤判率與影響"
+    ],
+    "answer": 1,
+    "explanation": "招募決策涉及個人權益，應兼顧公平、可追溯、人工監督及救濟機制。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-016",
+    "exam": "ipas_s1",
+    "category": "L111 人工智慧概念與治理",
+    "difficulty": 2,
+    "question": "哪一種人類監督模式最接近 Human-over-the-loop？",
+    "options": [
+      "AI 每做一項決策前，都必須由人類逐筆審核並事前核准",
+      "AI 完全自行運作，人類無法查看紀錄、暫停系統、調整權限或改變決策",
+      "AI 在授權範圍內自動運作，人類監控並於例外、異常或抽查時介入",
+      "人類僅在損害發生後閱讀報告，但沒有即時介入或覆寫權限"
+    ],
+    "answer": 2,
+    "explanation": "Human-over-the-loop 通常允許系統在界線內自動運作，由人類監控並在異常、例外或風險事件時介入。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-017",
+    "exam": "ipas_s1",
+    "category": "L114 鑑別式與生成式 AI",
+    "difficulty": 1,
+    "question": "下列關於鑑別式 AI 與生成式 AI 的敘述，何者較適當？",
+    "options": [
+      "鑑別式 AI 常學習輸入與標籤的決策界線；生成式 AI 學習資料分布並產生內容",
+      "鑑別式 AI 主要建立文字與影像內容；生成式 AI 只輸出預先定義的類別標籤與分數",
+      "鑑別式 AI 不需要訓練資料即可分類；生成式 AI 則只能使用人工標註資料",
+      "兩者使用完全相同的目標與輸出方式，差異僅在模型參數數量"
+    ],
+    "answer": 0,
+    "explanation": "鑑別式模型偏向分類與預測；生成式模型則能根據學到的分布產生文字、圖像等內容。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-018",
+    "exam": "ipas_s1",
+    "category": "L112 資料處理與分析",
+    "difficulty": 2,
+    "question": "下列何者最符合半結構化資料？",
+    "options": [
+      "以固定欄位、固定型別與資料表關聯儲存，且結構需事先定義的訂單資料庫",
+      "具有鍵值、標籤或階層結構，但欄位不必完全固定的 JSON 文件",
+      "沒有預先定義欄位與標籤的客服錄音及自由文字內容",
+      "依紙本格式填寫、尚未數位化與建立欄位規則的手寫筆記"
+    ],
+    "answer": 1,
+    "explanation": "JSON、XML 等具有標籤或鍵值結構，但不必像關聯式資料庫具有固定表格，因此屬半結構化資料。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-019",
+    "exam": "ipas_s1",
+    "category": "L112 資料處理與分析",
+    "difficulty": 2,
+    "question": "若資料具有少數極端值，欲以單一統計量描述集中趨勢，通常哪一項較不容易受極端值影響？",
+    "options": [
+      "平均數",
+      "全距",
+      "中位數",
+      "變異數"
+    ],
+    "answer": 2,
+    "explanation": "中位數依排序位置決定，通常比平均數更不受極端值影響。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S1-020",
+    "exam": "ipas_s1",
+    "category": "L111 人工智慧概念與治理",
+    "difficulty": 2,
+    "question": "資料最小化原則最接近下列哪一項做法？",
+    "options": [
+      "先收集所有可能使用的資料，再於未來決定實際用途",
+      "為提升模型表現，將取得的資料永久保存且不設定期限",
+      "完成原目的後，不另行告知就把資料轉作其他分析用途",
+      "依明確目的，只收集與處理完成任務所必要的資料"
+    ],
+    "answer": 3,
+    "explanation": "資料最小化要求資料收集與使用限於明確目的所必要的範圍。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-001",
+    "exam": "ipas_s2",
+    "category": "L121 No Code／Low Code",
+    "difficulty": 1,
+    "question": "關於 No Code 與 Low Code，下列何者最適當？",
+    "options": [
+      "Low Code 通常以視覺化開發為主，也允許程式碼擴充與系統整合",
+      "No Code 與 Low Code 都能免除測試、權限管理與後續維護工作",
+      "No Code 一定比客製開發更適合所有企業流程與核心資訊系統",
+      "導入 No Code 或 Low Code 後，資訊人員便不再需要參與治理"
+    ],
+    "answer": 0,
+    "explanation": "Low Code 多半提供視覺化開發並允許程式碼擴充；任何方案仍需測試、維運與治理。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-002",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "要讓 AI 僅依技術報告整理三項結論且不得自行補數據，哪個提示詞較適當？",
+    "options": [
+      "依附件整理三項結論；若資料不完整，可引用模型記憶補齊並標示推估值與信心水準",
+      "只依附件整理三項結論並標示章節；附件沒有的數據寫「資料不足」，不得推測",
+      "依附件整理完整結論，優先提升說服力；不必標示章節或說明資料缺口",
+      "依附件與產業常識整理三項結論，並加入合理案例以使內容更具體"
+    ],
+    "answer": 1,
+    "explanation": "提示詞明確指定資料邊界、輸出數量、來源標示及不確定性處理，可降低越界生成。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-003",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 1,
+    "question": "在提示詞中提供兩個合格輸出範例，再要求模型處理新任務，稱為？",
+    "options": [
+      "Zero-shot prompting",
+      "資料正規化",
+      "Few-shot prompting",
+      "模型蒸餾"
+    ],
+    "answer": 2,
+    "explanation": "提供少量示例引導模型模仿，稱為 Few-shot prompting。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-004",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "RAG 的主要作用為何？",
+    "options": [
+      "以外部文件永久修改基礎模型的全部權重，使知識直接寫入模型並持續更新",
+      "在生成後自動刪除所有不確定句子，因此可以保證回答完全沒有幻覺",
+      "把生成式模型轉換為傳統分類模型，使輸出只剩預先定義的標籤與機率",
+      "先檢索相關外部資料，再把檢索內容連同問題提供給模型生成回答"
+    ],
+    "answer": 3,
+    "explanation": "RAG 將檢索與生成結合，適合引用最新或專有知識，但仍需檢查檢索品質與答案正確性。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-005",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "企業知識庫每週更新，希望 AI 依最新內部文件回答，通常較適合優先評估哪種方式？",
+    "options": [
+      "提高 Temperature，讓模型產生更多不同版本的回答",
+      "建立可更新的 RAG 知識庫與檢索流程",
+      "每週從零重新訓練一個完整的大型語言模型",
+      "把所有內部文件永久寫進一段更長的系統提示詞"
+    ],
+    "answer": 1,
+    "explanation": "知識頻繁更新時，將外部知識與模型分離，透過 RAG 更新索引，通常比反覆重訓更有效率。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-006",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "下列何者最符合 AI Agent？",
+    "options": [
+      "依固定規則將關鍵字對應到預先寫好的單句回答，且不會自行規劃或調整步驟的聊天程式",
+      "只負責儲存文件、建立索引與回傳搜尋結果的向量資料庫",
+      "能依目標規劃步驟、選擇工具、執行任務並依結果調整後續行動的系統",
+      "只將錄音轉成逐字稿，但不會規劃步驟或呼叫其他工具的模型"
+    ],
+    "answer": 2,
+    "explanation": "Agent 通常包含目標理解、規劃、工具使用、狀態管理與執行回饋。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-007",
+    "exam": "ipas_s2",
+    "category": "L123 導入評估與規劃",
+    "difficulty": 1,
+    "question": "企業進行生成式 AI 概念驗證（PoC）的主要目的為何？",
+    "options": [
+      "直接取代所有既有流程，以最快速度證明生成式 AI 的價值",
+      "先購買功能最多的模型與平台，再回頭尋找可以使用的需求",
+      "省略資料與使用者需求分析，改以模型展示效果作為唯一依據",
+      "在有限且可控的範圍內，驗證技術可行性、效益、成本與風險"
+    ],
+    "answer": 3,
+    "explanation": "PoC 是低成本、受控範圍的驗證，用來降低全面導入失敗的風險。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-008",
+    "exam": "ipas_s2",
+    "category": "L123 導入評估與規劃",
+    "difficulty": 2,
+    "question": "導入 AI 會議紀錄工具時，下列哪組 KPI 較能衡量實際效益？",
+    "options": [
+      "人工作業時間節省比例、內容修正率與實際使用者滿意度",
+      "模型參數量、供應商品牌知名度與每次回覆的平均字數及生成速度",
+      "員工登入次數、提示詞總數與產生會議紀錄的文件數量及頁面停留時間",
+      "頁面停留時間、按鈕點擊次數、使用者登入率與選用的介面主題顏色"
+    ],
+    "answer": 0,
+    "explanation": "導入成效應連結作業效率、品質與使用者採用，而不是只看技術規格。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-009",
+    "exam": "ipas_s2",
+    "category": "L12303 風險管理",
+    "difficulty": 1,
+    "question": "員工準備把未公開專利草稿上傳免費公用 AI 工具，最適當的做法是？",
+    "options": [
+      "刪除檔名、作者姓名與公司名稱後直接上傳，因為文件內容就不再具有機密性",
+      "先把專利草稿切成數段分別上傳，即可避免平台保存、串接或用於模型訓練",
+      "先確認公司政策、服務條款與資料保護機制，必要時改用核准的企業環境",
+      "在提示詞中要求模型保密並禁止訓練，再把完整內容上傳到任何免費公用工具"
+    ],
+    "answer": 2,
+    "explanation": "未公開專利屬敏感資訊，應先確認資料處理、保存、訓練使用、權限與公司政策。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-010",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "下列哪一種方法最能降低專業文件中的幻覺風險？",
+    "options": [
+      "提高 Temperature 以增加答案多樣性，再挑選語氣最肯定的一個版本",
+      "要求模型憑既有記憶作答，並禁止它表達不確定或資料不足",
+      "延長輸出字數並增加專業術語，使內容看起來更完整且具權威感",
+      "提供可信資料、限制回答邊界、要求標示依據，並由人員進行查證"
+    ],
+    "answer": 3,
+    "explanation": "可信來源、明確邊界與人工驗證可以降低風險，但無法保證完全沒有錯誤。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-011",
+    "exam": "ipas_s2",
+    "category": "L123 導入評估與規劃",
+    "difficulty": 2,
+    "question": "公司想自動分類客服信件。下列導入順序何者較合理？",
+    "options": [
+      "盤點需求與風險→小範圍 PoC→評估成效→逐步部署→持續監控",
+      "先全面上線→觀察員工反應→補做需求分析→最後建立測試、監控與回退流程",
+      "先採購平台→刪除舊資料→關閉人工覆核→由模型自行調整政策",
+      "先自動回覆高風險客訴→累積失敗案例→再決定是否建立治理機制"
+    ],
+    "answer": 0,
+    "explanation": "合理導入流程從需求與風險開始，經 PoC、評估、試行、部署，並持續監控。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-012",
+    "exam": "ipas_s2",
+    "category": "L12303 風險管理",
+    "difficulty": 2,
+    "question": "企業建立採購 Agent，何種治理設計最適當？",
+    "options": [
+      "Agent 只要通過上線前測試，即可不受金額限制自動建立與送出訂單",
+      "低風險資訊整理可自動完成；高金額或不可逆下單須由授權人員確認",
+      "所有搜尋、比價、格式整理與低風險動作都必須由主管逐項手動完成",
+      "高金額訂單可自動送出，但低金額訂單必須由兩位主管逐筆核准"
+    ],
+    "answer": 1,
+    "explanation": "應依風險與可逆性設定權限邊界；高影響動作需人類授權、稽核與追蹤。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-013",
+    "exam": "ipas_s2",
+    "category": "L121 No Code／Low Code",
+    "difficulty": 2,
+    "question": "哪一種情境較適合先採 No Code／Low Code 建立原型？",
+    "options": [
+      "對延遲極敏感、需高度客製且直接處理核心交易的正式生產系統",
+      "涉及高度機密資料，但平台的資料保存、權限與退出條款仍不清楚",
+      "需要從零設計作業系統核心、驅動程式與底層硬體控制的研發專案",
+      "流程明確、風險有限，且需要快速驗證內部表單、通知與簽核流程"
+    ],
+    "answer": 3,
+    "explanation": "No Code／Low Code 適合快速建立流程型原型；高複雜、高效能或高敏感核心系統需更審慎評估。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-014",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "調高生成模型的 Temperature，通常最可能帶來什麼效果？",
+    "options": [
+      "輸出通常更具多樣性，但一致性與可預測性可能隨之下降",
+      "輸出會自動連接最新外部資料，因此事實正確率必然提高",
+      "模型會永久更新內部權重，使之後所有回答都採用新知識",
+      "回答會變得完全固定且可重現，但創意與措辭差異會增加"
+    ],
+    "answer": 0,
+    "explanation": "Temperature 影響取樣隨機性，較高時輸出通常更多樣，但不是正確性或知識更新機制。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-015",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "微調（Fine-tuning）與 RAG 的差異，何者較正確？",
+    "options": [
+      "微調只改提示詞而不接觸資料；RAG 則永久重寫基礎模型全部權重與知識內容",
+      "微調會調整模型行為或部分權重；RAG 在推論時提供檢索到的外部知識",
+      "微調最適合每小時更新的事實；RAG 最適合固定語氣與輸出格式",
+      "兩者都不需要準備資料、評估品質或管理版本，導入方式完全相同"
+    ],
+    "answer": 1,
+    "explanation": "微調適合調整風格、格式或特定任務行為；頻繁更新的知識通常較適合 RAG。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-016",
+    "exam": "ipas_s2",
+    "category": "L123 導入評估與規劃",
+    "difficulty": 2,
+    "question": "評估生成式 AI 導入成本時，下列何者最完整？",
+    "options": [
+      "只計算訂閱費、API 單價、硬體採購、初次建置與顧問費，組織流程和治理成本可忽略",
+      "只計算初次開發與導入顧問費，正式上線後的維護與監控不列入",
+      "同時估算模型或 API、整合開發、資料整理、資安治理、人工覆核、維運與訓練",
+      "只估算可節省的人力成本，資料品質、風險與退出成本不必納入"
+    ],
+    "answer": 2,
+    "explanation": "總持有成本包含直接技術成本與組織流程、治理、維護及人力成本。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-017",
+    "exam": "ipas_s2",
+    "category": "L12303 風險管理",
+    "difficulty": 2,
+    "question": "為了讓生成式 AI 回答可追溯，最適當的設計是？",
+    "options": [
+      "保留資料來源、模型與提示版本、輸出、人工修正、核准與最終決策紀錄",
+      "只保存模型名稱與最終答案，刪除提示、來源、中間修正與核准紀錄以節省空間",
+      "僅保留使用者登入時間與頁面點擊紀錄，不保存任何生成內容",
+      "禁止使用者回報錯誤並定期清空紀錄，以避免舊版本影響新模型"
+    ],
+    "answer": 0,
+    "explanation": "可追溯性需要記錄資料來源、模型與提示版本、輸出、人工介入及最終決策。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-018",
+    "exam": "ipas_s2",
+    "category": "L122 生成式 AI 工具與提示",
+    "difficulty": 2,
+    "question": "下列哪一項最符合「結構化輸出」提示策略？",
+    "options": [
+      "要求模型使用自然語言自由回答，再由下游系統猜測欄位、資料型別與缺值規則",
+      "要求輸出固定 JSON 欄位、資料型別，並定義缺少資料時的處理方式",
+      "只限制輸出字數與語氣，但不指定欄位名稱、格式或缺值表示方式",
+      "要求每次採用不同且具創意的版面，讓使用者自行整理成系統格式"
+    ],
+    "answer": 1,
+    "explanation": "固定欄位與錯誤處理規則能提高後續系統解析與自動化的穩定性。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-019",
+    "exam": "ipas_s2",
+    "category": "L123 導入評估與規劃",
+    "difficulty": 2,
+    "question": "PoC 成功後，正式擴大部署前最不應忽略哪一項？",
+    "options": [
+      "只更新品牌名稱與介面樣式，沿用 PoC 的權限、資料與錯誤處理設定",
+      "刪除 PoC 驗證與失敗紀錄，以免正式環境受到測試結果影響",
+      "完成壓力與異常測試，確認權限、監控、人工流程、回退與事件處理",
+      "取消人工覆核與回退機制，讓模型在正式上線後自行修正所有問題"
+    ],
+    "answer": 2,
+    "explanation": "從 PoC 到正式部署需補足可靠性、安全、監控、操作流程與回退設計。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "IPAS-S2-020",
+    "exam": "ipas_s2",
+    "category": "L12303 風險管理",
+    "difficulty": 2,
+    "question": "企業使用外部生成式 AI 供應商時，哪一項供應商評估最重要？",
+    "options": [
+      "只比較供應商品牌、媒體曝光、市場排名與展示案例，技術與合約條款可後續再談",
+      "只比較介面功能與回覆速度，不需要確認資料用途、權限或保存地點",
+      "只比較社群追蹤數與公開展示案例，避免要求退出方案增加導入成本",
+      "評估資料保存與訓練使用政策、資安能力、可用性、退出及資料移轉機制"
+    ],
+    "answer": 3,
+    "explanation": "供應商風險應涵蓋資料、資安、營運持續、鎖定風險與退出方案。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-001",
+    "exam": "iii",
+    "category": "生成式 AI 基礎知識",
+    "difficulty": 1,
+    "question": "大型語言模型中的 Token 最接近下列哪一項？",
+    "options": [
+      "模型處理文字時使用的基本切分單位，可能是字、子詞、單字或符號",
+      "每個 Token 固定等於一個中文字或一個完整英文單字",
+      "一個 Token 固定代表整篇文件，文件長度、語言與符號都不影響其數量",
+      "Token 是使用者的登入憑證，主要用來計算帳號權限"
+    ],
+    "answer": 0,
+    "explanation": "Token 是模型處理輸入輸出的基本單位，不一定等於一個字或一個單字。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-002",
+    "exam": "iii",
+    "category": "生成式 AI 基礎知識",
+    "difficulty": 2,
+    "question": "Transformer 的注意力機制主要用來做什麼？",
+    "options": [
+      "依固定順序逐步處理輸入，每次只能參考前一個位置的狀態與輸出結果",
+      "依目前語境，動態評估序列中不同位置彼此的關聯與重要程度",
+      "為每個位置套用永久固定的權重，不會因問題或上下文改變",
+      "將整份文件先壓縮成單一代碼，再忽略各位置之間的關係"
+    ],
+    "answer": 1,
+    "explanation": "注意力機制讓模型在處理某個位置時，依任務動態關注其他相關位置。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-003",
+    "exam": "iii",
+    "category": "生成式 AI 能力強化",
+    "difficulty": 1,
+    "question": "下列哪一個提示詞通常較能產生符合需求的輸出？",
+    "options": [
+      "你是行銷企劃，請撰寫完整的導入文章，讀者、篇幅、語氣與格式可由你自行決定",
+      "請整理生成式 AI 的導入優點，以專業語氣完整說明，不限制篇幅、格式、結構與目標讀者",
+      "你是行銷企劃，請為中小企業主管寫 500 字文章，以三個小標題呈現，語氣正式易懂",
+      "請為中小企業主管撰寫導入文章，並加入未提供的成功數據與案例以提高說服力"
+    ],
+    "answer": 2,
+    "explanation": "角色、受眾、任務、長度、格式與語氣越明確，通常越容易得到可用輸出。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-004",
+    "exam": "iii",
+    "category": "生成式 AI 能力強化",
+    "difficulty": 2,
+    "question": "使用者先要求模型提出草稿，再依評分準則自我檢查並重寫，主要運用了哪種策略？",
+    "options": [
+      "刪除訓練資料並重新建立模型的資料治理流程",
+      "壓縮模型參數以降低推論成本的模型最佳化流程",
+      "提高隨機性並接受第一次輸出的取樣策略",
+      "提示迭代與依評分準則進行自我檢核"
+    ],
+    "answer": 3,
+    "explanation": "分階段產出、依準則檢查並修正，是提示迭代與評估導向的工作流程。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-005",
+    "exam": "iii",
+    "category": "生成式 AI 能力強化",
+    "difficulty": 2,
+    "question": "要求模型回答時標示引用來源，仍需人工查證的主要原因是？",
+    "options": [
+      "只要模型列出網址，來源就一定存在且能完整支持回答內容",
+      "模型可能產生不存在、過時或與回答內容不相符的引用",
+      "引用內容即使與原文不符，也會因為附上連結而自動變得可信",
+      "模型產生引用後，使用者會自動取得來源內容的著作權授權"
+    ],
+    "answer": 1,
+    "explanation": "模型可能生成錯誤、過時或虛構引用，需實際開啟來源核對內容與日期。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-006",
+    "exam": "iii",
+    "category": "生成式 AI 應用技能",
+    "difficulty": 2,
+    "question": "使用生成式 AI 整理會議紀錄時，最適當的流程是？",
+    "options": [
+      "直接將生成結果視為正式決議，再由模型補寫未錄到的討論、責任人與完成期限",
+      "刪除發言者姓名與日期後即可免除查證，並直接發布給所有內外部利害關係人",
+      "先確認錄音與逐字稿的使用權限，再區分討論、決議、待辦，並由與會者覆核",
+      "要求模型統一語氣並自行推定責任人與決議，若內容流暢就不必再由人員確認"
+    ],
+    "answer": 2,
+    "explanation": "應先確認資料使用權限，並透過結構化整理與人工覆核，避免把討論誤寫成決議。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-007",
+    "exam": "iii",
+    "category": "生成式 AI 應用技能",
+    "difficulty": 2,
+    "question": "用生成式 AI 產生程式碼後，最適當的做法是？",
+    "options": [
+      "只要程式能在開發者電腦執行一次，就直接部署到正式環境",
+      "只檢查程式碼行數與執行速度，不必驗證錯誤處理與安全弱點",
+      "移除所有註解後直接發布，因為生成式 AI 已經完成品質保證",
+      "進行程式審查、測試、安全掃描，並確認套件、授權與部署環境"
+    ],
+    "answer": 3,
+    "explanation": "生成程式碼可能含錯誤、弱點或不合適的依賴，仍需完整軟體工程驗證。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-008",
+    "exam": "iii",
+    "category": "生成式 AI 倫理法律",
+    "difficulty": 1,
+    "question": "下列何者最能降低個資外洩風險？",
+    "options": [
+      "先依目的去識別化與最小化資料，並使用組織核准的工具與環境",
+      "將完整個資上傳公用模型，再於提示詞中要求平台不要保存資料",
+      "只修改檔名與欄位標題，即可視為已完成個資去識別化",
+      "把資料分成數個檔案分批上傳，即可避開平台的資料使用條款"
+    ],
+    "answer": 0,
+    "explanation": "需從資料最小化、去識別化、權限與合規環境處理，單靠文字要求不能形成安全保證。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-009",
+    "exam": "iii",
+    "category": "生成式 AI 倫理法律",
+    "difficulty": 2,
+    "question": "關於 AI 生成內容的著作權，較適當的說法是？",
+    "options": [
+      "所有 AI 生成內容都必然受到著作權保護，與人類投入程度無關",
+      "所有 AI 生成內容都必然屬於公有領域，任何人皆可不受限制地複製、改作與商用",
+      "權利判斷可能依司法管轄、人類創作投入、素材授權與具體使用方式而異",
+      "只要付費使用生成工具，使用者就會取得輸入與輸出涉及的全部權利"
+    ],
+    "answer": 2,
+    "explanation": "AI 內容的保護與侵權判斷涉及地區法規、人類創作性、輸入素材及使用方式。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-010",
+    "exam": "iii",
+    "category": "生成式 AI 倫理法律",
+    "difficulty": 2,
+    "question": "在學術作業中使用生成式 AI，較負責任的做法是？",
+    "options": [
+      "只要把 AI 文字改寫成自己的語氣，就可以不揭露工具協助或引用來源",
+      "允許 AI 自行產生引用與實驗數據，只要文章結構完整便可直接提交",
+      "將整份作業交由 AI 完成，再刪除對話紀錄以證明內容是自行撰寫",
+      "依學校規範揭露使用範圍、查證資料與引用，並由自己承擔內容責任"
+    ],
+    "answer": 3,
+    "explanation": "應遵循機構規範、揭露適當資訊、查核引用，並由作者對內容負責。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-011",
+    "exam": "iii",
+    "category": "生成式 AI 基礎知識",
+    "difficulty": 2,
+    "question": "模型幻覺最接近哪一種現象？",
+    "options": [
+      "模型以流暢語氣產生看似合理，但實際不正確、無根據或不符合來源的內容",
+      "模型因安全政策拒絕回答高風險問題，並清楚說明拒絕原因",
+      "模型在同一提示下使用不同措辭與例子，但各版本的事實內容與來源都正確",
+      "模型因伺服器負載而延遲回覆，但最後輸出的內容與來源一致"
+    ],
+    "answer": 0,
+    "explanation": "幻覺指模型生成與事實、來源或輸入不一致的內容，且常具有高度語言流暢性。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-012",
+    "exam": "iii",
+    "category": "生成式 AI 能力強化",
+    "difficulty": 2,
+    "question": "下列哪一種做法最能提高摘要的可驗證性？",
+    "options": [
+      "要求模型加入產業常識與合理推測，使摘要資訊比原文更完整",
+      "要求每項摘要標示原文頁碼或段落，並限制只能依提供資料整理",
+      "提高 Temperature 以產生多個摘要版本，再選擇語氣最專業的一份",
+      "刪除原始文件與版本紀錄，只保留模型生成的最終摘要內容"
+    ],
+    "answer": 1,
+    "explanation": "建立摘要與原文位置的對照，可快速核查是否遺漏或扭曲。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-013",
+    "exam": "iii",
+    "category": "生成式 AI 應用技能",
+    "difficulty": 2,
+    "question": "以 AI 生成產品圖片時，哪一項檢查最重要？",
+    "options": [
+      "只確認圖片解析度與美觀程度，模型允許生成即可直接用於所有商業用途",
+      "只確認沒有明顯浮水印，其他人物、商標與素材權利由平台自動處理",
+      "只比較生成速度與檔案大小，不必核對圖片所呈現的產品功能與規格",
+      "確認商標、人物肖像、素材授權、產品規格與是否造成誤導性呈現"
+    ],
+    "answer": 3,
+    "explanation": "商業使用需同時考量權利、真實性、廣告誤導及平台條款。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-014",
+    "exam": "iii",
+    "category": "生成式 AI 倫理法律",
+    "difficulty": 2,
+    "question": "深偽內容的主要風險不包括下列何者？",
+    "options": [
+      "自動提高所有資訊的可信度與可驗證性",
+      "冒用人物身分、聲音或影像進行詐騙與操縱",
+      "散播虛假事件或言論，影響公眾判斷與社會信任",
+      "未經當事人同意使用肖像、聲音或私密影像"
+    ],
+    "answer": 0,
+    "explanation": "深偽會降低資訊可信度，而非自動提高可信度。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-015",
+    "exam": "iii",
+    "category": "生成式 AI 能力強化",
+    "difficulty": 2,
+    "question": "當模型對同一問題給出不同答案時，較適當的處理是？",
+    "options": [
+      "挑選最符合自己預期的答案，並把其他版本視為不需要處理的雜訊",
+      "檢查提示條件、資料來源、模型設定與版本，並以可靠來源驗證差異",
+      "把所有不同答案都當成同樣正確，因為生成式模型本來就具有隨機性",
+      "反覆輸入相同問題直到答案一致，但不記錄模型、提示與資料的差異"
+    ],
+    "answer": 1,
+    "explanation": "輸出差異可能來自隨機性、提示不明、版本與資料差異，需以可重現條件與外部證據查驗。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-016",
+    "exam": "iii",
+    "category": "生成式 AI 應用技能",
+    "difficulty": 2,
+    "question": "希望 AI 將客服信件轉成後續系統可讀格式，哪個要求較適當？",
+    "options": [
+      "請用自然語言完整說明分類結果，欄位與順序可依每封信的內容自由變動",
+      "請輸出 CSV，但不定義欄位名稱、資料型別與缺少資訊時的表示方式",
+      "輸出 JSON：category、urgency、summary；缺值用 null",
+      "請輸出 JSON，每次可自行新增、刪除、改名或改變欄位型別，無法判斷時填入模型推測內容"
+    ],
+    "answer": 2,
+    "explanation": "固定 schema 與缺值規則有利於系統整合及錯誤處理。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-017",
+    "exam": "iii",
+    "category": "生成式 AI 倫理法律",
+    "difficulty": 2,
+    "question": "AI 系統可能對特定群體產生不公平結果，最完整的改善方式是？",
+    "options": [
+      "檢查資料代表性、各群體績效與決策門檻，並建立人工覆核、申訴及持續監控",
+      "只提高整體平均準確率與處理速度，不分析不同群體的錯誤率、門檻與實際影響",
+      "隱藏群體差異與偏誤評估結果，避免使用者或受影響者因看到問題而質疑系統",
+      "只加快模型推論速度與介面操作，讓受影響者更快取得決策結果"
+    ],
+    "answer": 0,
+    "explanation": "偏誤可能源自資料、模型與使用流程，需要多層次檢測、緩解及救濟。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-018",
+    "exam": "iii",
+    "category": "生成式 AI 基礎知識",
+    "difficulty": 2,
+    "question": "多模態生成式 AI 的「多模態」主要指什麼？",
+    "options": [
+      "系統只能同時登入多個帳號，因此可以由多人共同使用同一模型",
+      "系統能處理或生成文字、圖像、聲音、影片等不同形式的資訊",
+      "系統一定由多家公司共同開發，並同時部署在多個雲端平台",
+      "系統只能處理多國語言文字，但不能理解或生成圖像與聲音"
+    ],
+    "answer": 1,
+    "explanation": "多模態系統可跨越文字、圖像、聲音、影片等不同資訊形式。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-019",
+    "exam": "iii",
+    "category": "生成式 AI 能力強化",
+    "difficulty": 2,
+    "question": "將複雜任務拆成「蒐集資料→比較→提出建議→檢查限制」的主要好處是？",
+    "options": [
+      "保證每一步與最終答案都完全正確，因此不再需要人工查證",
+      "讓模型不再需要外部資料、工具或明確的輸出要求即可完成工作",
+      "讓任務邊界、中間結果、資料依據與限制更容易逐步檢查及修正",
+      "自動取得資料、圖片與文字的使用授權，避免後續法律風險"
+    ],
+    "answer": 2,
+    "explanation": "任務分解提升可觀察性與可驗證性，但仍需人工判斷及來源查核。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  },
+  {
+    "id": "III-020",
+    "exam": "iii",
+    "category": "生成式 AI 倫理法律",
+    "difficulty": 2,
+    "question": "組織建立生成式 AI 使用政策時，下列何者最完整？",
+    "options": [
+      "只規定員工可以使用的提示詞範本與工具清單，其他資料、紀錄與責任問題由個人判斷",
+      "完全禁止員工使用任何生成式 AI，且不建立例外、通報或教育機制",
+      "只要求輸出看起來專業與一致，不必規範資料、工具、紀錄或人工覆核",
+      "涵蓋允許用途、禁用資料、核准工具、人工覆核、紀錄、事件通報與教育訓練"
+    ],
+    "answer": 3,
+    "explanation": "有效政策需同時處理使用範圍、資料、工具、責任、稽核及事件應變。",
+    "version": "0.3",
+    "reviewStatus": "ChatGPT × Claude 交叉審查",
+    "reviewedAt": "2026-07-17",
+    "level": "標準"
+  }
+]
