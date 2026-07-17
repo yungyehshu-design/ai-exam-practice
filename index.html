@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="iPAS AI 應用規劃師與資策會生成式 AI 能力認證原創模擬測驗">
+<title>AI 雙證照模擬測驗｜Roger Study Lab</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+  <header class="hero">
+    <h1>AI 雙證照模擬測驗</h1>
+    <p>iPAS AI 應用規劃師初級 × 資策會生成式 AI 能力認證</p>
+    <div class="notice">V0.1 試行版｜題目為依官方公開範圍編寫的原創練習題，非官方試題。目前題庫已做基本邏輯檢查，尚待 Claude 第二輪獨立稽核。</div>
+  </header>
+
+  <section id="setup" class="panel">
+    <h2>選擇考區</h2>
+    <div class="grid" id="examCards"></div>
+    <div class="controls">
+      <div class="field">
+        <label for="mode">測驗模式</label>
+        <select id="mode">
+          <option value="10">快速測驗｜10 題</option>
+          <option value="20" selected>標準測驗｜20 題</option>
+          <option value="all">本版全部題目</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="category">章節篩選</label>
+        <select id="category"><option value="all">全部章節</option></select>
+      </div>
+    </div>
+    <div class="checkrow">
+      <label><input type="checkbox" id="useTimer" checked> 依正式考試節奏計時</label>
+      <label><input type="checkbox" id="shuffleOptions"> 打亂選項順序</label>
+    </div>
+    <div class="btnbar">
+      <button class="btn btn-primary" id="startBtn">開始測驗</button>
+      <button class="btn btn-secondary" id="historyBtn">查看歷次成績</button>
+    </div>
+  </section>
+
+  <section id="quiz" class="hidden">
+    <div class="topbar">
+      <div class="progress-wrap">
+        <div id="progressText" class="meta"></div>
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+      <div id="timer" class="timer">--:--</div>
+    </div>
+    <div class="quiz-layout">
+      <main class="q-card">
+        <div class="q-head"><span id="qCategory"></span><span id="qDifficulty"></span></div>
+        <div id="qText" class="q-text"></div>
+        <div id="options"></div>
+        <div class="btnbar">
+          <button class="btn btn-secondary" id="prevBtn">上一題</button>
+          <button class="btn btn-secondary" id="markBtn">標記本題</button>
+          <button class="btn btn-primary" id="nextBtn">下一題</button>
+          <button class="btn btn-danger" id="submitBtn">交卷</button>
+        </div>
+      </main>
+      <aside class="side">
+        <strong>題號導覽</strong>
+        <div id="navGrid" class="navgrid" style="margin-top:10px"></div>
+        <div class="legend">綠色：已作答｜黃線：已標記｜外框：目前題目</div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="results" class="panel hidden"></section>
+  <section id="history" class="panel hidden"></section>
+
+  <footer class="footer">
+    題庫資料確認日：2026-07-17｜本工具只供學習，不代表 iPAS、工研院或資策會官方立場。
+  </footer>
+</div>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
