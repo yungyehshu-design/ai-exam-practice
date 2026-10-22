@@ -14,9 +14,43 @@ const $=s=>document.querySelector(s);
 const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 
-function getHistory(){
-  try{return JSON.parse(localStorage.getItem(HISTORY_KEY)||"[]")}
-  catch(error){console.error("讀取歷史紀錄失敗",error);return []}
+function readHistory(){
+  try{
+    const raw=localStorage.getItem(HISTORY_KEY);
+    const entries=raw===null?[]:JSON.parse(raw);
+    return Array.isArray(entries)?{entries,invalid:false}:{entries:[],invalid:true};
+  }catch(error){
+    console.error("讀取歷史紀錄失敗",error);
+    return {entries:[],invalid:true};
+  }
+}
+const isRecord=x=>x!==null&&typeof x==="object"&&!Array.isArray(x);
+const isHistoryInteger=(x,min,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(x)&&x>=min&&x<=max;
+function validHistoryRow(row,exam){
+  if(!isRecord(row)||!isRecord(row.q))return false;
+  const q=row.q;
+  return q.exam===exam&&[q.category,q.question,q.explanation].every(x=>typeof x==="string")&&
+    (q.level===undefined||typeof q.level==="string")&&isHistoryInteger(q.difficulty,1,3)&&
+    Array.isArray(q.options)&&q.options.length>=2&&q.options.length<=26&&q.options.every(x=>typeof x==="string")&&
+    isHistoryInteger(q.answer,0,q.options.length-1)&&
+    (row.user===null||isHistoryInteger(row.user,0,q.options.length-1))&&
+    typeof row.ok==="boolean"&&row.ok===(row.user===q.answer);
+}
+function validateHistoryItem(item){
+  if(!isRecord(item)||typeof item.exam!=="string"||!Object.hasOwn(EXAMS,item.exam)||
+    typeof item.date!=="string"||!Number.isFinite(Date.parse(item.date))||
+    !isHistoryInteger(item.count,1)||!isHistoryInteger(item.correct,0,item.count)||
+    !isHistoryInteger(item.score,0,100)||item.score!==Math.round(item.correct/item.count*100)||
+    !isHistoryInteger(item.elapsed,0)||(item.isRetry!==undefined&&typeof item.isRetry!=="boolean"))return null;
+  // Invalid details must not hide an otherwise usable legacy score or enable retry.
+  const hasDetails=Object.hasOwn(item,"details");
+  const validDetails=Array.isArray(item.details)&&item.details.length===item.count&&
+    item.details.every(row=>validHistoryRow(row,item.exam))&&
+    item.details.filter(row=>row.ok).length===item.correct;
+  return {...item,isRetry:item.isRetry??false,details:validDetails?item.details:undefined,invalidDetails:hasDetails&&!validDetails};
+}
+function getHistory(entries=readHistory().entries){
+  return entries.map(validateHistoryItem).filter(item=>item!==null);
 }
 function renderExamCards(){
   $("#examCards").innerHTML=Object.entries(EXAMS).map(([key,e])=>{
@@ -143,7 +177,7 @@ function reviewHtml(rows){
   </div>`).join("");
 }
 function categoryBreakdown(rows){
-  const byCat={};
+  const byCat=Object.create(null);
   rows.forEach(r=>{
     byCat[r.q.category]??={total:0,correct:0};
     byCat[r.q.category].total++;
@@ -178,7 +212,12 @@ function showResults(rows,score,correct,elapsed){
   $("#backHome").onclick=goHome;
 }
 function saveHistory(item){
-  const arr=getHistory();
+  const stored=readHistory();
+  if(stored.invalid){
+    alert("原有歷史紀錄無法讀取，本次成績未儲存，以免覆蓋原始資料。可至歷次成績匯出原始紀錄備份。");
+    return;
+  }
+  const arr=stored.entries;
   arr.unshift(item);
   let trimmed=arr.slice(0,HISTORY_LIMIT);
   try{localStorage.setItem(HISTORY_KEY,JSON.stringify(trimmed))}
@@ -196,18 +235,21 @@ function showHistory(){
   $("#quiz").classList.add("hidden");
   $("#results").classList.add("hidden");
   $("#history").classList.remove("hidden");
-  const arr=getHistory();
+  const stored=readHistory();
+  const arr=getHistory(stored.entries);
+  const hasInvalid=stored.invalid||arr.length!==stored.entries.length||arr.some(item=>item.invalidDetails);
   const body=arr.length?`<div class="history-table-wrap"><table class="history-table">
     <thead><tr><th>日期</th><th>考區</th><th>場次</th><th>題數</th><th>分數</th><th>用時</th><th>明細</th></tr></thead>
     <tbody>${arr.map((x,i)=>`<tr>
-      <td>${new Date(x.date).toLocaleString("zh-TW")}</td>
-      <td>${EXAMS[x.exam]?.name||x.exam}</td>
+      <td>${esc(new Date(x.date).toLocaleString("zh-TW"))}</td>
+      <td>${esc(EXAMS[x.exam].name)}</td>
       <td>${x.isRetry?'<span class="badge">錯題重做</span>':'<span class="badge">一般測驗</span>'}</td>
-      <td>${x.count}</td><td>${x.score}</td><td>${formatTime(x.elapsed)}</td>
-      <td>${Array.isArray(x.details)?`<button class="btn btn-secondary history-detail" data-i="${i}">查看錯題與解析</button>`:`<span class="meta">舊紀錄無明細</span>`}</td>
+      <td>${esc(x.count)}</td><td>${esc(x.score)}</td><td>${esc(formatTime(x.elapsed))}</td>
+      <td>${Array.isArray(x.details)?`<button class="btn btn-secondary history-detail" data-i="${i}">查看錯題與解析</button>`:`<span class="meta">${x.invalidDetails?"明細損壞，僅顯示成績":"舊紀錄無明細"}</span>`}</td>
     </tr>`).join("")}</tbody></table></div>`:`<p class="meta">目前沒有作答紀錄。</p>`;
   $("#history").innerHTML=`<h2>歷次成績</h2>
     <p class="meta">V0.3 會區分一般測驗與錯題重做，避免重做高分稀釋弱項統計；V0.1 舊紀錄仍無逐題明細。</p>
+    ${hasInvalid?'<p class="meta" role="status">部分紀錄格式異常，無法安全顯示的內容已略過；原始資料未刪除，可匯出備份。</p>':""}
     ${body}
     <div class="btnbar">
       <button class="btn btn-secondary" id="historyBack">回首頁</button>
@@ -226,9 +268,9 @@ function showHistoryDetail(index){
   const wrongRows=rows.filter(r=>!r.ok);
   selectedExam=item.exam;
   $("#history").innerHTML=`<div class="result-hero">
-    <div class="meta">歷史紀錄｜${EXAMS[item.exam]?.name||item.exam}｜${sessionBadge(Boolean(item.isRetry))}</div>
-    <div class="score">${item.score}</div>
-    <div>${item.correct}／${item.count} 題正確｜${new Date(item.date).toLocaleString("zh-TW")}｜用時 ${formatTime(item.elapsed)}</div>
+    <div class="meta">歷史紀錄｜${esc(EXAMS[item.exam].name)}｜${sessionBadge(item.isRetry)}</div>
+    <div class="score">${esc(item.score)}</div>
+    <div>${esc(item.correct)}／${esc(item.count)} 題正確｜${esc(new Date(item.date).toLocaleString("zh-TW"))}｜用時 ${esc(formatTime(item.elapsed))}</div>
   </div>
   <h3>章節表現</h3><div class="breakdown">${categoryBreakdown(rows)}</div>
   <div class="btnbar">
@@ -244,7 +286,13 @@ function showHistoryDetail(index){
   $("#historyListBack").onclick=showHistory;
 }
 function exportHistory(){
-  const blob=new Blob([JSON.stringify(getHistory(),null,2)],{type:"application/json;charset=utf-8"});
+  // Export the original data, including entries omitted from the safe display.
+  let raw;
+  try{raw=localStorage.getItem(HISTORY_KEY)??"[]"}
+  catch(error){alert("無法讀取瀏覽器儲存空間，未匯出紀錄。");return}
+  let content=raw;
+  try{content=JSON.stringify(JSON.parse(raw),null,2)}catch(error){}
+  const blob=new Blob([content],{type:"application/json;charset=utf-8"});
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");
   a.href=url;

@@ -55,6 +55,25 @@
 將本資料夾中的所有檔案上傳至 Repository 根目錄並覆蓋同名檔案。
 提交後等待 GitHub Pages 更新，再按 `Ctrl + F5` 強制重新整理。
 
+## 歷史紀錄安全性與回歸測試
+
+- `aiExamHistoryV01` 維持原 key；V0.1 摘要與 V0.2／V0.3 完整明細仍可使用。
+- 讀取時驗證陣列、考區、日期、整數範圍、分數一致性及逐題結構；不接受數字字串或把非布林值視為重做場次。
+- 顯示歷史資料時跳脫 HTML。無效摘要略過；明細損壞時保留有效摘要，停用該筆解析與重做，並顯示提示。
+- 瀏覽及匯出不改寫儲存內容。匯出保留原始紀錄，包含無法顯示的資料；損壞 JSON 會原樣匯出以供備份。
+- 儲存新成績時沿用最近 20 筆與空間不足時縮減的既有政策，不會因顯示驗證而過濾舊資料。若原始 JSON 損壞或根節點不是陣列，保留原值並提示本次無法儲存；成績與解析仍會顯示。
+
+需 Node.js 22 以上。安裝測試用 Playwright 與 Chromium 後執行：
+
+```sh
+npm install --no-save --package-lock=false playwright@1.60.0
+npx playwright install chromium
+node --check app.js
+node --test tests/history-safety.test.cjs
+```
+
+測試使用臨時 localhost 及獨立瀏覽器 context，不會連線正式網站或碰觸既有瀏覽器成績。可用 `PLAYWRIGHT_MODULE` 指定已安裝的 Playwright／playwright-core 模組路徑；`HISTORY_SCREENSHOT_DIR` 可另存畫面。
+
 ## 重要聲明
 
 題目為依官方公開範圍編寫的原創練習題，不是官方試題，也沒有重製付費題庫。
